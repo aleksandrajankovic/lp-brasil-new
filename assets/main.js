@@ -105,10 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
            flex items-start sm:items-center gap-4 md:gap-6"
   >
     <div class="flex-1 text-left">
-      <p class="font-blunt uppercase text-[22px] md:text-[26px] tracking-[0.08em] text-[#d9a445]">
+      <p class="font-bold uppercase text-[22px] text-[#d9a445]">
         ${card.title}
       </p>
-      <p class="mt-3 text-[14px] md:text-[16px] leading-snug text-white">
+      <p class="mt-3 text-[14px] md:text-sm leading-snug text-[#bdbdbd]">
         ${card.text}
       </p>
     </div>
