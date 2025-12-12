@@ -148,22 +148,21 @@
     <!-- MOBILE HERO -->
     <section
       id="heroSection"
-      class="md:hidden relative text-center bg-cover bg-center flex flex-col justify-center h-screen hero-bg"
+      class="md:hidden relative text-center bg-cover bg-center flex flex-col justify-start hero-bg py-[50px]"
     >
       <div class="px-4 mt-[-25px]">
         <!-- TODA SEMANA gore -->
         <img
           src="./assets/images/TODA-SEMANA.png"
           alt="Toda semana"
-          class="promo-img-line promo-img-1 mx-auto w-[90%] max-w-[260px] mb-[20px]"
+          class="promo-img-line promo-img-1 mx-auto w-[90%] max-w-[200px] mb-[20px]"
         />
 
-        <!-- ispod: 100 RG + plus + freebets u JEDNOM redu -->
         <div class="flex flex-col items-center justify-center gap-2 mt-2">
           <img
             src="./assets/images/100-RG.png"
             alt="100 rodadas grátis"
-            class="promo-img-line promo-img-2 w-[220px]"
+            class="promo-img-line promo-img-2 w-[180px]"
           />
           <img
             src="./assets/images/plus.png"
@@ -173,16 +172,30 @@
           <img
             src="./assets/images/freebets.png"
             alt="freebets"
-            class="promo-img-line promo-img-4 w-[240px]"
+            class="promo-img-line promo-img-4 w-[200px]"
           />
         </div>
       </div>
-      <h2
-        class="text-center text-[22px] font-semibold text-white leading-[1] mt-6"
-      >
-        Jogue nos slots da Expanse, aposte nas ligas selecionadas e receba bônus
-        toda semana em cassino e esportes!
-      </h2>
+      <section class="px-4 block md:hidden">
+        <div
+          class="max-w-5xl mt-2 mx-auto rounded-[22px] md:justify-center md:flex md:items-stretch px-2 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.7)]"
+          style="
+            backdrop-filter: blur(4px);
+
+            border-radius: 22px;
+            background: #d9a4450d;
+            border: 1px solid #d9a445;
+          "
+        >
+          <h2
+            class="text-center text-[16px] font-semibold text-white leading-[1] p-2"
+          >
+            Jogue nos slots da Expanse, aposte nas ligas selecionadas e
+            receba
+            bônus toda semana em cassino e esportes!
+          </h2>
+        </div>
+      </section>
       <a
         href="#"
         target="_blank"
@@ -219,7 +232,7 @@
 
     <!-- DESKTOP HERO WITH TRANSPARENT HEADER -->
     <section
-      class="hidden h-screen relative bg-cover hero-bg md:flex flex-col justify-center gap-[30px]"
+      class="hidden h-screen relative bg-cover hero-bg md:flex flex-col justify-top g-[30px] pt-[50px]"
     >
       <div
         class="max-w-screen-3xl mx-auto flex justify-center items-center relative z-10"
@@ -230,14 +243,14 @@
             <img
               src="./assets/images/TODA-SEMANA-FLAT.png"
               alt="Toda semana"
-              class="promo-img-line promo-img-1 mx-auto w-[90%] max-w-[660px]"
+              class="promo-img-line promo-img-1 mx-auto w-[90%] max-w-[560px]"
             />
 
             <div class="promo-row">
               <img
                 src="./assets/images/100-RG.png"
                 alt="100 rodadas grátis"
-                class="w-[46%] max-w-[460px]"
+                class="w-[46%] max-w-[360px]"
               />
               <img
                 src="./assets/images/plus.png"
@@ -247,17 +260,31 @@
               <img
                 src="./assets/images/freebets.png"
                 alt="100% freebets"
-                class="w-[46%] max-w-[560px]"
+                class="w-[46%] max-w-[460px]"
               />
             </div>
           </div>
-          <h2
-            class="text-center text-[32px] font-semibold mb-6 text-white leading-[1] mt-6"
-          >
-            Jogue nos slots da Expanse, aposte nas ligas selecionadas e
-            receba<br />
-            bônus toda semana em cassino e esportes!
-          </h2>
+          <section class="px-4 hidden md:block">
+            <div
+              class="max-w-5xl mx-auto rounded-[22px] md:justify-center md:flex md:items-stretch px-8 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.7)]"
+              style="
+                backdrop-filter: blur(4px);
+
+                border-radius: 22px;
+                background: #d9a4450d;
+                border: 1px solid #d9a445;
+              "
+            >
+              <h2
+                class="text-center text-[22px] font-semibold mb-6 text-white leading-[1] mt-6"
+              >
+                Jogue nos slots da Expanse, aposte nas ligas selecionadas e
+                receba<br />
+                bônus toda semana em cassino e esportes!
+              </h2>
+            </div>
+          </section>
+
           <div
             class="flex items-center flex-col justify-evenly mt-[26px] space-x-6 gap-[30px]"
           >

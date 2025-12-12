@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const faqButtons = Array.from(document.querySelectorAll(".faq-button"));
   const faqContents = Array.from(document.querySelectorAll(".faq-content"));
-  const VISIBLE_COUNT = 4; // koliko pitanja vidiš po defaultu
+  const VISIBLE_COUNT = 4;
 
   // accordion click
   faqButtons.forEach((btn) => {
@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "esportes",
       title: "ESPORTES",
-
       text: "Aposte a partir de R$5,00 e ganhe 100% de freebet nas ligas selecionadas.",
       img: "./assets/images/esport.png",
       alt: "Promo Esportes",
-      gradient: "from-[#234919] via-[#234919] to-[#000000]",
+      gradientDesk: "bg-[linear-gradient(180deg,#234919_30px,#030A0E_16vw)]",
+      gradient: "bg-gradient-to-br from-[#234919] via-[#234919] to-[#030A0E]",
     },
     {
       id: "cassino",
       title: "CASSINO",
-
       text: "Jogue R$ 300,00 em slots Expanse e receba 100 rodadas grátis em 4 dias.",
       img: "./assets/images/vila.png",
       alt: "Promo Cassino",
+      gradientDesk: "bg-[linear-gradient(180deg,#59029D_30px,#000000_16vw)]",
       gradient: "from-[#59029D] via-[#59029D] to-[#000000]",
     },
   ];
@@ -97,23 +97,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "swiper-slide flex items-stretch justify-center px-1 md:px-2";
     slide.innerHTML = `
   <div
-    class="relative w-full max-w-[520px] h-[200px]
+    class="relative w-full max-w-none h-[250px]
            rounded-[12px]
            px-6 py-6 md:px-10 md:py-8
-           bg-gradient-to-br ${card.gradient}
+            md:${card.gradientDesk} bg-gradient-to-br ${card.gradient}
            shadow-[0_18px_40px_rgba(0,0,0,0.6)]
            flex items-start sm:items-center gap-4 md:gap-6"
   >
     <div class="flex-1 text-left">
-      <p class="font-bold uppercase text-[22px] text-[#d9a445]">
+      <p class="font-bold uppercase text-[32px] text-[#d9a445]">
         ${card.title}
       </p>
-      <p class="mt-3 text-[14px] md:text-sm leading-snug text-[#bdbdbd]">
+      <p class="mt-3 text-[18px] md:text-[22px] leading-snug text-[#fff]">
         ${card.text}
       </p>
     </div>
 
-    <!-- DESKTOP slika -->
+    <!-- DESKTOP  -->
     <div class="flex-shrink-0 hidden sm:block">
       <img
         src="${card.img}"
@@ -124,13 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
       />
     </div>
 
-    <!-- MOBILE slika – manja, dole desno -->
+    <!-- MOBILE -->
     <img
       src="${card.img}"
       alt="${card.alt}"
       class="block sm:hidden
            
-             w-[80px] h-[150px] object-contain"
+             w-[100px] h-[150px] object-contain"
       loading="lazy"
       decoding="async"
     />
@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.appendChild(slide);
   });
 
-  // 🔧 UVEK inicijalizuj Swiper – 2 boxa na desktopu, slider na mobilu
   new Swiper(".swiper-container", {
     loop: false,
     spaceBetween: 16,
@@ -162,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       1024: {
         slidesPerView: 2,
-        allowTouchMove: false, // na desktopu samo stoje 2 boxa
+        allowTouchMove: false,
       },
     },
   });
