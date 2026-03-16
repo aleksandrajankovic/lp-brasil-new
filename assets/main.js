@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       root: null,
       threshold: 0,
-    }
+    },
   );
 
   observer.observe(hero);
@@ -74,19 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "esportes",
       title: "ESPORTES",
       text: "Aposte a partir de R$5,00 e ganhe 100% de freebet nas ligas selecionadas.",
-      img: "./assets/images/esport.png",
+      img: "./img/futebol.png",
       alt: "Promo Esportes",
       gradientDesk: "bg-[linear-gradient(180deg,#234919_30px,#030A0E_16vw)]",
       gradient: "bg-gradient-to-br from-[#234919] via-[#234919] to-[#030A0E]",
+      link: "https://meridianbet.bet.br/promo/ca/category/1413/page/37413",
     },
     {
       id: "cassino",
       title: "CASSINO",
       text: "Jogue R$ 300,00 em slots Expanse e receba 100 rodadas grátis em 4 dias.",
-      img: "./assets/images/vila.png",
+      img: "./img/cassino.png",
       alt: "Promo Cassino",
       gradientDesk: "bg-[linear-gradient(180deg,#59029D_30px,#000000_16vw)]",
       gradient: "from-[#59029D] via-[#59029D] to-[#000000]",
+      link: "https://meridianbet.bet.br/promo/ca/category/1414/page/37342",
     },
   ];
 
@@ -96,45 +98,53 @@ document.addEventListener("DOMContentLoaded", () => {
     slide.className =
       "swiper-slide flex items-stretch justify-center px-1 md:px-2";
     slide.innerHTML = `
-  <div
-    class="relative w-full max-w-none h-[250px]
-           rounded-[12px]
-           px-6 py-6 md:px-10 md:py-8
-            md:${card.gradientDesk} bg-gradient-to-br ${card.gradient}
-           shadow-[0_18px_40px_rgba(0,0,0,0.6)]
-           flex items-start sm:items-center gap-4 md:gap-6"
-  >
-    <div class="flex-1 text-left">
-      <p class="font-bold uppercase text-[32px] text-[#d9a445]">
-        ${card.title}
-      </p>
-      <p class="mt-3 text-[18px] md:text-[22px] leading-snug text-[#fff]">
-        ${card.text}
-      </p>
-    </div>
+  <a href="${card.link}" target="_blank" class="block w-full">
+    <div
+      class="relative overflow-hidden w-full
+             min-h-[220px] sm:h-[250px]
+             rounded-[20px]
+             px-5 py-5 md:px-10 md:py-8
+             ${card.gradientDesk ? `md:${card.gradientDesk}` : ""}
+             bg-gradient-to-br ${card.gradient}
+             shadow-[0_18px_40px_rgba(0,0,0,0.6)]
+             flex items-start sm:items-center gap-4 md:gap-6"
+    >
+      <!-- TEXT -->
+      <div class="relative z-[2] text-left max-w-[62%] sm:max-w-none flex-1">
+        <p class="font-bold uppercase text-[18px] sm:text-[22px] text-[#d9a445]">
+          ${card.title}
+        </p>
+        <p class="mt-3 text-[15px] sm:text-[18px] leading-snug text-[#fff]">
+          ${card.text}
+        </p>
+      </div>
 
-    <!-- DESKTOP  -->
-    <div class="flex-shrink-0 hidden sm:block">
+      <!-- DESKTOP IMAGE -->
+      <div class="flex-shrink-0 hidden sm:block ${card.id}">
+  <img
+  src="${card.img}"
+  alt="${card.alt}"
+  class="
+    object-contain
+    ${card.id === "cassino"
+      ? "w-[230px] md:w-[250px] lg:w-[270px]"
+      : "w-[260px] md:w-[300px] lg:w-[340px]"
+    }
+  "
+/>
+</div>
+
+      <!-- MOBILE IMAGE -->
       <img
         src="${card.img}"
         alt="${card.alt}"
-        class="w-[120px] md:w-[150px] lg:w-[180px] h-[180px] object-contain"
+       class="sm:hidden absolute right-[-20px] bottom-[-12px]
+       w-[190px] h-[190px] object-contain z-[1]"
         loading="lazy"
         decoding="async"
       />
     </div>
-
-    <!-- MOBILE -->
-    <img
-      src="${card.img}"
-      alt="${card.alt}"
-      class="block sm:hidden
-           
-             w-[100px] h-[150px] object-contain"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+  </a>
 `;
 
     wrapper.appendChild(slide);
@@ -199,13 +209,12 @@ function autoSlide(sliderContainer) {
   setInterval(moveSlides, 30);
 }
 
-// pokreni za sve, ali funkcija će sama isključiti gde treba
 document.querySelectorAll(".slider-container").forEach(autoSlide);
 
 (function () {
   const ua = navigator.userAgent.toLowerCase();
 
-  const isIOS = /iphone|ipad|ipod/.test(ua); // svi iOS browseri
+  const isIOS = /iphone|ipad|ipod/.test(ua);
   const isMacSafari =
     /macintosh/.test(ua) &&
     /safari/.test(ua) &&

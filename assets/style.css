@@ -127,24 +127,7 @@ li::marker {
   gap: 8px;
   margin-bottom: 16px;
 }
-.sponsorships::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    width: 24%;
-    height: 15%;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
-    z-index: 10;
-}
-.sponsorships-icons::before {
-     content: "";
-    position: absolute;
-    left: 0;
-    width: 18%;
-    height: 8%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
-    z-index: 10;
-}
+
 
 .sponsorships-text h3 {
   width: 100%;
@@ -351,9 +334,6 @@ authority > a img {
   opacity: 0;
   transform: translateX(-40px);
   animation: slideInFromLeft 0.8s ease-out forwards;
-}
-.hero-bg {
-  background-image: url("./images/100kazino-sport-BG.png");
 }
 .promo-img-line:hover {
   transform: translateX(0) scale(1.02);
