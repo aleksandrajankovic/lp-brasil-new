@@ -71,16 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cards = [
     {
-      id: "esportes",
-      title: "ESPORTES",
-      text: "Aposte a partir de R$5,00 e ganhe 100% de freebet nas ligas selecionadas.",
-      img: "./img/futebol.png",
-      alt: "Promo Esportes",
-      gradientDesk: "bg-[linear-gradient(180deg,#234919_30px,#030A0E_16vw)]",
-      gradient: "bg-gradient-to-br from-[#234919] via-[#234919] to-[#030A0E]",
-      link: "https://meridianbet.bet.br/promo/ca/category/1413/page/37413",
-    },
-    {
       id: "cassino",
       title: "CASSINO",
       text: "Jogue R$ 300,00 em slots Expanse e receba 100 rodadas grátis em 4 dias.",
@@ -89,6 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
       gradientDesk: "bg-[linear-gradient(180deg,#59029D_30px,#000000_16vw)]",
       gradient: "from-[#59029D] via-[#59029D] to-[#000000]",
       link: "https://meridianbet.bet.br/promo/ca/category/1414/page/37342",
+    },
+    {
+      id: "esportes",
+      title: "ESPORTES",
+      text: "Aposte a partir de R$5,00 e ganhe 100% de freebet nas ligas selecionadas.",
+      img: "./img/futebol.png",
+      alt: "Promo Esportes",
+      gradientDesk: "bg-[linear-gradient(180deg,#234919_30px,#030A0E_16vw)]",
+      gradient: "bg-gradient-to-br from-[#234919] via-[#234919] to-[#030A0E]",
+      link: "https://meridianbet.bet.br/promo/ca/category/1413/page/37413",
     },
   ];
 
@@ -126,9 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
   alt="${card.alt}"
   class="
     object-contain
-    ${card.id === "cassino"
-      ? "w-[230px] md:w-[250px] lg:w-[270px]"
-      : "w-[260px] md:w-[300px] lg:w-[340px]"
+    ${
+      card.id === "cassino"
+        ? "w-[230px] md:w-[250px] lg:w-[270px]"
+        : "w-[260px] md:w-[300px] lg:w-[340px]"
     }
   "
 />
